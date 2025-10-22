@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início | Sentinelas Arcanos</title>
+    <style>
+        /* CSS BÁSICO DO INICIANTE */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        
+        /* O CARROSSEL SIMPLIFICADO */
+        .carrossel-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 2px solid #555;
+            padding: 10px;
+            overflow: hidden; 
+            background-color: white;
+        }
+
+        .carrossel-item {
+            /* Um iniciante simplesmente listaria os itens */
+            display: inline-block; 
+            width: 30%; /* Três em linha */
+            margin: 0 1%;
+            vertical-align: top;
+        }
+
+        .carrossel-item a {
+            text-decoration: none;
+            color: #1a0dab; /* Cor de link padrão */
+            display: block;
+        }
+
+        .carrossel-item img {
+            width: 100%;
+            height: 150px; /* Tamanho fixo e simples */
+            object-fit: cover;
+            border: 1px solid #777;
+        }
+
+        .legenda {
+            margin-top: 5px;
+            font-weight: bold;
+            padding: 5px 0;
+            background-color: #eee;
+        }
+
+        .navegacao button {
+            margin: 10px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        .link-inscricao {
+            display: block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>⚔️ A Sala das Classes ⚔️</h1>
+    <p>Escolha sua vocação antes de se inscrever na Guilda dos Sentinelas Arcanos.</p>
+
+    <div class="carrossel-container">
+        <p>CLASSES DISPONÍVEIS:</p>
+        
+        <div class="carrossel-item">
+            <a href="classe-guerreiro.html">
+                <img src="public/guerreiro.jpg" alt="Guerreiro">
+                <div class="legenda">O Guerreiro</div>
+            </a>
+        </div>
+
+        <div class="carrossel-item">
+            <a href="classe-mago00.html">
+               <img src="public/mago00.jpg" alt="Mago">
+                <div class="legenda">O Mago Arcano</div>
+            </a>
+        </div>
+
+        <div class="carrossel-item">
+            <a href="classe-arqueiro.html">
+                <img src="public/arqueiro.webp" alt="Arrow">
+                <div class="legenda">O Arqueiro</div>
+            </a>
+        </div>
+        
+        <div class="navegacao">
+            <button>◀ Esquerda</button>
+            <button>Direita ▶</button>
+        </div>
+
+    </div>
+
+    <a href="inscricao.html" class="link-inscricao">Junte-se à Guilda! Preencha a Ficha Mágica</a>
+
+</body>
+</html>

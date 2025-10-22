@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição | Ficha Mágica</title>
+    <style>
+        /* CSS EXTERNO SIMULADO (estilo.css) - Aulas 10, 12 */
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #e8e8d0; /* Fundo de pergaminho leve */
+            padding: 20px;
+        }
+
+        /* Centralização e largura fixa do formulário (Aula 12) */
+        form {
+            width: 100%;
+            max-width: 600px; /* width fixa (ex: 600px) */
+            margin: auto; /* Centraliza na página */
+            padding: 25px; /* padding interno (para "respirar") */
+            background-color: white;
+            border: 3px solid #6c543f;
+            border-radius: 8px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        legend {
+            font-weight: bold;
+            color: #3e3e3e;
+            padding: 0 10px;
+        }
+        
+        /* Layout e Fluxo (Aula 10, 11) */
+        label {
+            display: block; /* display: block como regra geral (Aula 10) */
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box; /* Garante que o padding não estoure a width */
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            display: block; /* display: block como regra geral */
+        }
+        
+        /* Atributos lado a lado (Aula 12: .medidas) */
+        .medidas {
+            overflow: auto; /* Limpa o float se usarmos float */
+            margin-top: 15px;
+        }
+
+        .medidas div {
+            float: left; /* Tenta float para iniciantes */
+            width: 48%;
+            box-sizing: border-box;
+        }
+        
+        .medidas div:first-child {
+            margin-right: 4%;
+        }
+
+        /* Radio e Checkbox em linha (Aula 11: .opcao-linha) */
+        .opcao-linha label {
+            display: inline-block; /* Alinha texto ao lado (Aula 11) */
+            margin-right: 20px;
+            font-weight: normal;
+        }
+        
+        .botoes-juramento {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        /* Estilização dos Botões (Aula 8, 15) */
+        #enviar,
+        input[type="reset"] {
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            margin: 5px;
+        }
+        
+        #enviar {
+            background-color: #28a745; /* Verde */
+            color: white;
+        }
+        
+        input[type="reset"] {
+            background-color: #dc3545; /* Vermelho */
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1 style="text-align: center; color: #6c543f;">📜 Ficha de Inscrição Mágica</h1>
+
+    <form action="/inscricao-recebida" method="POST">
+        
+        <fieldset>
+            <legend>Dados do Aventureiro</legend>
+
+            <label for="nomeGuerra">Nome de Guerra:</label>
+            <input type="text" id="nomeGuerra" name="nomeGuerra" 
+                   placeholder="Seu nome de aventureiro lendário" required autofocus>
+
+
+
+            <label for="horarioMissao">Horário Preferido para Missões:</label>
+            <input type="time" id="horarioMissao" name="horarioMissao">
+            
+        </fieldset>
+
+        <fieldset>
+            <legend>Especialização</legend>
+
+            <label for="raca">Raça:</label>
+            <select id="raca" name="raca" required>
+                <option value="" selected disabled>Selecione sua linhagem...</option>
+                <option value="humano">Humano</option>
+                <option value="elfo">Elfo</option>
+                <option value="anao">Anão</option>
+                <option value="orc">Orc</option>
+            </select>
+            
+            <br>
+            
+            <label>Classe Desejada:</label>
+            <div class="opcao-linha">
+                <input type="radio" id="guerreiro" name="classeDesejada" value="guerreiro">
+                <label for="guerreiro">Guerreiro</label>
+
+                <input type="radio" id="mago" name="classeDesejada" value="mago">
+                <label for="mago">Mago</label>
+
+                <input type="radio" id="arqueiro" name="classeDesejada" value="arqueiro">
+                <label for="arqueiro">Arqueiro</label>
+
+                <input type="radio" id="ladino" name="classeDesejada" value="ladino">
+                <label for="ladino">Ladino</label>
+            </div>
+            
+            <br>
+            
+            <label>Habilidades Conhecidas:</label>
+            <div class="opcao-linha">
+                <input type="checkbox" id="espadas" name="habilidades" value="espadas">
+                <label for="espadas">Combate com Espadas</label>
+
+                <input type="checkbox" id="magia" name="habilidades" value="magia">
+                <label for="magia">Magia Elemental</label>
+
+                <input type="checkbox" id="alquimia" name="habilidades" value="alquimia">
+                <label for="alquimia">Alquimia</label>
+                
+                <input type="checkbox" id="furtividade" name="habilidades" value="furtividade">
+                <label for="furtividade">Furtividade</label>
+                
+                <input type="checkbox" id="arco" name="habilidades" value="arco">
+                <label for="arco">Arco e Flecha</label>
+            </div>
+            
+        </fieldset>
+        
+        <fieldset>
+            <legend>Histórico</legend>
+
+            <label for="retrato">Envie seu Retrato (Foto):</label>
+            <input type="file" id="retrato" name="retrato" accept="image/*">
+
+            <label for="historia">História do Personagem (Backstory):</label>
+            <textarea id="historia" name="historia" rows="10" 
+                      placeholder="Conte-nos sua jornada até aqui."></textarea>
+        </fieldset>
+        
+        <div class="botoes-juramento">
+            <input type="submit" value="Fazer Juramento e Enviar Ficha" id="enviar">
+
+            <input type="reset" value="Limpar Ficha">
+        </div>
+        
+    </form>
+    
+    <p style="text-align: center; margin-top: 20px;">
+        <a href="index.html" style="color: #6c543f;">🔙 Voltar à Sala das Classes</a>
+    </p>
+
+</body>
+</html>
